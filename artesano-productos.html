@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Nuevo Producto - Fomento Artesanal</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/styles.css"> <!-- Agrega tu CSS aquí -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Fomento Artesanal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="artisans.html">Artesanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Formulario para agregar producto -->
+    <main class="container my-5">
+        <h1 class="mb-4">Agregar Nuevo Producto</h1>
+        <form id="product-form">
+            <!-- Nombre del producto -->
+            <div class="form-group">
+                <label for="product-name">Nombre del Producto:</label>
+                <input type="text" class="form-control" id="product-name" name="product_name" required>
+            </div>
+            <!-- Descripción del producto -->
+            <div class="form-group">
+                <label for="product-description">Descripción:</label>
+                <textarea class="form-control" id="product-description" name="product_description" rows="4" required></textarea>
+            </div>
+            <!-- Precio del producto -->
+            <div class="form-group">
+                <label for="product-price">Precio (USD):</label>
+                <input type="number" class="form-control" id="product-price" name="product_price" step="0.01" required>
+            </div>
+            <!-- Subir imagen del producto -->
+            <div class="form-group">
+                <label for="product-image">Imagen del Producto:</label>
+                <input type="file" class="form-control-file" id="product-image" name="product_image" accept="image/*" required>
+            </div>
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+        </form>
+    </main>
+
+    <!-- Enlaces a Bootstrap JS y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script JavaScript para manejar el envío del formulario -->
+    <script>
+        // Obtener el formulario y añadir el evento de submit
+        const form = document.getElementById('product-form');
+        
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita la recarga de la página
+            
+            // Crear un objeto FormData para recoger todos los datos del formulario
+            const formData = new FormData();
+            formData.append('product_name', document.getElementById('product-name').value);
+            formData.append('product_description', document.getElementById('product-description').value);
+            formData.append('product_price', document.getElementById('product-price').value);
+            formData.append('product_image', document.getElementById('product-image').files[0]);
+
+            // Enviar la solicitud AJAX utilizando Fetch API
+            fetch('https://your-api-endpoint.com/add-product', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(data => {
+                // Verificar si la operación fue exitosa
+                if (data.success) {
+                    alert('Producto agregado exitosamente');
+                    form.reset(); // Limpiar el formulario
+                } else {
+                    alert('Error al agregar el producto');
+                }
+            })
+            .catch(error => {
+                alert('Hubo un error: ' + error.message);
+            });
+        });
+    </script>
+</body>
+
+</html>

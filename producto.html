@@ -1,0 +1,19 @@
+<?php
+session_start();
+require 'database.php'; // Conexión a la base de datos
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// Consulta para verificar credenciales
+$stmt = $pdo->prepare("SELECT * FROM artisans WHERE username = ? AND password = ?");
+$stmt->execute([$username, md5($password)]);
+$user = $stmt->fetch();
+
+if ($user) {
+    $_SESSION['user_id'] = $user['id'];
+    header('Location: artisan-dashboard.html');
+} else {
+    echo 'Credenciales incorrectas';
+}
+?>
