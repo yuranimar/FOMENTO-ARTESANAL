@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Fomento Artesanal Cultural</title>
+    <meta name="description" content="Plataforma para promover la artesanía local y conectar artesanos con entusiastas.">
+    <meta name="keywords" content="artesanía, productos hechos a mano, artesanos locales">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Archivos CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Principal archivo CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/PERFIL.css" rel="stylesheet">
+    <style>
+        .menu-list {
+            display: none; /* Hide menu by default */
+        }
+
+        .menu-list.show {
+            display: block; /* Show menu when class 'show' is added */
+        }
+    </style>
+</head>
+
+<body class="-page">
+
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="assets/img/favicon.png" class="logo d-flex align-items-center me-auto">
+                <h1 class="sitename">Fomento Artesanal</h1>
+            </a>
+            <button class="menu-toggle btn btn-outline-primary">Menú</button>
+            <nav class="navmenu">
+                <ul class="menu-list">
+                    <li><a href=".html">Inicio</a></li>
+                    <li><a href="#artesanos">Artesanos</a></li>
+                    <li><a href="#artes-y-oficios">Artes y Oficios</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li class="search-item">
+                        <form class="d-flex ms-auto" action="buscar.html" method="get">
+                            <input class="form-control" type="search" placeholder="Buscar producto, arte o oficio..." name="query">
+                            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- User Profile Section -->
+    <div class="user-profile">
+        <div class="profile-header">
+            <img src="assets/img/Irene Giraldo.JPG" alt="Foto de perfil" class="profile-picture">
+            <h2>Nombre de Usuario</h2>
+            <p class="bio">Breve biografía sobre el usuario, intereses o especialidades.</p>
+            <button class="btn-edit">Editar Perfil</button>
+        </div>
+
+        <!-- Sección de productos -->
+        <div class="user-products">
+            <h3>Mis Productos</h3>
+            <ul class="product-list">
+                <li>
+                    <div class="product-info">
+                        <img src="path/to/product-image.jpg" alt="Producto 1" class="product-image">
+                        <span class="product-name">Nombre del Producto 1</span>
+                    </div>
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-delete">Eliminar</button>
+                </li>
+                <li>
+                    <div class="product-info">
+                        <img src="path/to/product-image.jpg" alt="Producto 2" class="product-image">
+                        <span class="product-name">Nombre del Producto 2</span>
+                    </div>
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-delete">Eliminar</button>
+                </li>
+            </ul>
+            <button class="btn-add-product">Agregar Nuevo Producto</button>
+        </div>
+
+        <!-- Sección de historial de compras -->
+        <div class="purchase-history">
+            <h3>Historial de Compras</h3>
+            <ul class="purchase-list">
+                <li>
+                    <span class="purchase-item">Producto Comprado 1</span>
+                    <span class="purchase-date">Fecha: 01/01/2024</span>
+                    <span class="purchase-status">Estado: Completado</span>
+                </li>
+                <li>
+                    <span class="purchase-item">Producto Comprado 2</span>
+                    <span class="purchase-date">Fecha: 01/02/2024</span>
+                    <span class="purchase-status">Estado: En Espera</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href=".html" class="d-flex align-items-center">
+                        <span class="sitename">Fomento Artesanal</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Cra 65 #7-15</p>
+                        <p>Medellín, Colombia</p>
+                        <p class="mt-3"><strong>Teléfono:</strong> <span>+57 123 456 789</span></p>
+                        <p><strong>Correo Electrónico:</strong> <span>info@fomentoartesanal.com</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Inicio</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Sobre Nosotros</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Eventos</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Nuestros Servicios</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Participación en Mercados</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Talleres</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Promoción de Productos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-social">
+                    <h4>Redes Sociales</h4>
+                    <p>Síguenos en nuestras redes sociales para estar al tanto de nuestras actividades y novedades.</p>
+                    <div class="social-links d-flex mt-2">
+                        <a href="https://facebook.com/fomentoartesanal" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/fomentoartesan" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="https://instagram.com/fomentoartesanal" class="instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2024 <strong><span>Fomento Artesanal</span></strong>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader">
+            <img src="assets/img/logo.png" alt="Cargando...">
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('preloader').classList.add('hidden');
+
+            document.querySelector('.menu-toggle').addEventListener('click', function () {
+                const menu = document.querySelector('.menu-list');
+                menu.classList.toggle('show'); // Toggle visibility
+            });
+        });
+    </script>
+</body>
+
+</html>
